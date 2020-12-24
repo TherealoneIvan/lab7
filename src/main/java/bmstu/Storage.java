@@ -27,9 +27,10 @@ public class Storage {
                 msg.add(" ");
                 msg.add(String.valueOf(end));
                 msg.add(parsedArg.toString());
-                backend.send(msg);
+                backend.send(msg.toString());
                 startTime = System.currentTimeMillis();
             }
+            
         }
     }
 }
