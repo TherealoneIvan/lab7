@@ -10,6 +10,6 @@ public class Client {
     public static void main(String[] args){
         ZMQ.Context context = ZMQ.context(1);
         Socket frontend =
-                context.socket(SocketType.ROUTER);
+                context.socket(SocketType.REQ);
     }
 }
