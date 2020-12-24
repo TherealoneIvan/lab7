@@ -14,7 +14,7 @@ public class Client {
         System.out.println("launch and connect client.");
         Scanner input = new Scanner(System.in);
         while (true){
-            
+            String msg = 
         }
     }
 }
