@@ -19,7 +19,11 @@ public class Storage {
         storage.register(backend , ZMQ.Poller.POLLIN);
         long startTime = System.currentTimeMillis();
         while (!Thread.currentThread().isInterrupted()) {
+            if (System.currentTimeMillis() - startTime > 5000){
+                
 
+                startTime = System.currentTimeMillis();
+            }
         }
     }
 }
