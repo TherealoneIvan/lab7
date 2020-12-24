@@ -11,7 +11,7 @@ public class Storage {
         ZMQ.Poller storage = context.poller (1);
         storage.register(backend , ZMQ.Poller.POLLIN);
         while (!Thread.currentThread().isInterrupted()) {
-            
+
         }
     }
 }
