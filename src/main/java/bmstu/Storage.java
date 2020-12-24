@@ -7,7 +7,8 @@ import java.util.Scanner;
 
 public class Storage {
     Scanner input = new Scanner(System.in);
-    String arguments = 
+    String arguments = input.nextLine();
+    
     public static void main(String[] args){
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket backend =
