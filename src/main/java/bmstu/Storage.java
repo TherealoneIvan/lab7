@@ -9,6 +9,8 @@ public class Storage {
     Scanner input = new Scanner(System.in);
     String arguments = input.nextLine();
     String [] parsedArg = arguments.split(" ");
+    Integer start = Integer.parseInt(parsedArg[0]);
+    Integer end = Integer.parseInt(parsedArg[1]);
     
     public static void main(String[] args){
         ZMQ.Context context = ZMQ.context(1);
