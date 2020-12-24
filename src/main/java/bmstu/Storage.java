@@ -30,7 +30,7 @@ public class Storage {
                 backend.send(msg.toString());
                 startTime = System.currentTimeMillis();
             }
-            if ()
+            if (storage.pollin())
         }
     }
 }
