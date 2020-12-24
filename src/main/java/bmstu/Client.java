@@ -11,5 +11,7 @@ public class Client {
         ZMQ.Context context = ZMQ.context(1);
         Socket frontend =
                 context.socket(SocketType.REQ);
+        requester.connect("tcp://localhost:5559");
+        System.out.println("launch and connect client.");
     }
 }
