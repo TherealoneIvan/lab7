@@ -10,6 +10,6 @@ public class Client {
                 context.socket(SocketType.REQ);
         requester.connect("tcp://localhost:5559");
         System.out.println("launch and connect client.");
-        Scaner input = new Scaner 
+        Scaner input = new Scaner (System.in);
     }
 }
