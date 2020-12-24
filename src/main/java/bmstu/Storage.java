@@ -11,7 +11,6 @@ public class Storage {
     String [] parsedArg = arguments.split(" ");
     Integer start = Integer.parseInt(parsedArg[0]);
     Integer end = Integer.parseInt(parsedArg[1]);
-    
     public static void main(String[] args){
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket backend =
