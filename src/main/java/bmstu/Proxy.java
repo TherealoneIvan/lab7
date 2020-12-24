@@ -23,7 +23,7 @@ public class Proxy {
 
         while (!Thread.currentThread().isInterrupted()) {
             items.poll();
-            
+
         }
     }
 }
