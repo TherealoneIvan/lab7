@@ -2,6 +2,7 @@ package bmstu;
 
 import org.zeromq.SocketType;
 import org.zeromq.ZMQ;
+import org.zeromq.ZMsg;
 
 import java.util.Scanner;
 
@@ -20,7 +21,7 @@ public class Storage {
         long startTime = System.currentTimeMillis();
         while (!Thread.currentThread().isInterrupted()) {
             if (System.currentTimeMillis() - startTime > 5000){
-                ZMsg = 
+                ZMsg msg = new 
 
                 startTime = System.currentTimeMillis();
             }
