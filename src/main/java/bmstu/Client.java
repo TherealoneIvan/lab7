@@ -13,5 +13,8 @@ public class Client {
         requester.connect("tcp://localhost:5559");
         System.out.println("launch and connect client.");
         Scanner input = new Scanner(System.in);
+        while (true){
+            
+        }
     }
 }
