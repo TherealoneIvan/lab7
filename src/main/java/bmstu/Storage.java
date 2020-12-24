@@ -27,7 +27,7 @@ public class Storage {
                 msg.add(" ");
                 msg.add(String.valueOf(end));
                 msg.add(parsedArg.toString());
-
+                
                 startTime = System.currentTimeMillis();
             }
         }
