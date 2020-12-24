@@ -9,7 +9,7 @@ import java.net.Socket;
 public class Client {
     public static void main(String[] args){
         ZMQ.Context context = ZMQ.context(1);
-        Socket frontend =
+        Socket requester =
                 context.socket(SocketType.REQ);
         requester.connect("tcp://localhost:5559");
         System.out.println("launch and connect client.");
