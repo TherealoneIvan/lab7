@@ -23,7 +23,8 @@ public class Storage {
             if (System.currentTimeMillis() - startTime > 5000){
                 ZMsg msg = new ZMsg();
                 msg.add("NOTIFY");
-                msg.add(start)
+                msg.add(String.valueOf(start));
+                msg.add()
 
                 startTime = System.currentTimeMillis();
             }
