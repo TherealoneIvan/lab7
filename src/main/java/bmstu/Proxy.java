@@ -5,7 +5,7 @@ import org.zeromq.SocketType;
 import org.zeromq.ZMQ;
 
 public class Proxy {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket frontend =
                 context.socket(SocketType.ROUTER);
@@ -15,7 +15,7 @@ public class Proxy {
         backend.bind("tcp://*:5560");
         System.out.println("launch and connect broker.");
 
-        ZMQ.Poller items = context.poller (2);
+        ZMQ.Poller items = context.poller(2);
         items.register(frontend, ZMQ.Poller.POLLIN);
         items.register(backend, ZMQ.Poller.POLLIN);
         boolean more = false;
@@ -23,10 +23,27 @@ public class Proxy {
 
         while (!Thread.currentThread().isInterrupted()) {
             items.poll();
-            if(items.pollin(0)){
-                
-            }
+            if (items.pollin(0)) {
+                while (true) {
+                    message = frontend.recv(0);
+                    more = frontend.hasReceiveMore();
+                    backend.send(message, more ? ZMQ.SNDMORE : 0);
+                    if (!more) {
+                        break;
+                    }
+                }
+                if (items.pollin(1)) {
+                    while (true) {
+                        message = backend.recv(0);
+                        more = backend.hasReceiveMore();
+                        frontend.send(message, more ? ZMQ.SNDMORE : 0);
+                        if (!more) {
+                            break;
+                        }
+                    }
 
+                }
+            }
         }
     }
 }
