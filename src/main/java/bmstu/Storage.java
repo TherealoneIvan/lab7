@@ -1,2 +1,4 @@
-package bmstu;public class Storage {
+package bmstu;
+
+public class Storage {
 }
