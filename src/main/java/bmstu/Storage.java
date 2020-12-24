@@ -32,7 +32,8 @@ public class Storage {
             }
             if (storage.pollin(0)){
                 ZMsg messageFromProxy = ZMsg.recvMsg(backend);
-                messageFromProxy
+                messageFromProxy.unwrap();
+                
             }
         }
     }
