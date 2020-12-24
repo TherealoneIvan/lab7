@@ -10,5 +10,6 @@ public class Storage {
                 context.socket(SocketType.DEALER);
         ZMQ.Poller storage = context.poller (1);
         storage.register(backend , ZMQ.Poller.POLLIN);
+        
     }
 }
