@@ -10,7 +10,7 @@ public class Proxy {
         ZMQ.Socket frontend =
                 context.socket(SocketType.ROUTER);
         ZMQ.Socket backend =
-                context.socket(SocketType.DEALER);
+                context.socket(SocketType.ROUTER);
         frontend.bind("tcp://*:5559");
         backend.bind("tcp://*:5560");
         System.out.println("launch and connect broker.");
