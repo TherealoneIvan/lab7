@@ -20,7 +20,7 @@ public class Storage {
         long startTime = System.currentTimeMillis();
         while (!Thread.currentThread().isInterrupted()) {
             if (System.currentTimeMillis() - startTime > 5000){
-                
+                ZMsg = 
 
                 startTime = System.currentTimeMillis();
             }
