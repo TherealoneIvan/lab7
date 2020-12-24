@@ -22,7 +22,8 @@ public class Proxy {
         byte[] message;
 
         while (!Thread.currentThread().isInterrupted()) {
-            items.poll()
+            items.poll();
+            
         }
     }
 }
