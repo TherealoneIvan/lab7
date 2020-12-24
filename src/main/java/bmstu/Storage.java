@@ -31,7 +31,7 @@ public class Storage {
                 startTime = System.currentTimeMillis();
             }
             if (storage.pollin(0)){
-                ZMsg messageFromProxy = ZMsg
+                ZMsg messageFromProxy = ZMsg.recvMsg()
             }
         }
     }
