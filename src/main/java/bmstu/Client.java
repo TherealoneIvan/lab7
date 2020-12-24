@@ -1,5 +1,5 @@
 package bmstu;
 
 public class Client {
-    public static void
+    public static void main(String[])
 }
