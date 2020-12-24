@@ -3,6 +3,8 @@ package bmstu;
 import org.zeromq.SocketType;
 import org.zeromq.ZMQ;
 
+import java.util.Scanner;
+
 public class Client {
     public static void main(String[] args){
         ZMQ.Context context = ZMQ.context(1);
@@ -10,6 +12,6 @@ public class Client {
                 context.socket(SocketType.REQ);
         requester.connect("tcp://localhost:5559");
         System.out.println("launch and connect client.");
-        Scaner input = new Scaner (System.in);
+        Scanner input = new Scanner(System.in);
     }
 }
