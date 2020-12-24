@@ -24,7 +24,9 @@ public class Storage {
                 ZMsg msg = new ZMsg();
                 msg.add("NOTIFY");
                 msg.add(String.valueOf(start));
-                msg.add()
+                msg.add(" ");
+                msg.add(String.valueOf(end));
+                msg.add(parsedArg.toString());
 
                 startTime = System.currentTimeMillis();
             }
