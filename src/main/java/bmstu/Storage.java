@@ -7,11 +7,11 @@ import org.zeromq.ZMsg;
 import java.util.Scanner;
 
 public class Storage {
-    Scanner input = new Scanner(System.in);
-    String arguments = input.nextLine();
-    String [] parsedArg = arguments.split(" ");
-    Integer start = Integer.parseInt(parsedArg[0]);
-    Integer end = Integer.parseInt(parsedArg[1]);
+    static Scanner input = new Scanner(System.in);
+    static String arguments = input.nextLine();
+    static String [] parsedArg = arguments.split(" ");
+    static Integer start = Integer.parseInt(parsedArg[0]);
+    static Integer end = Integer.parseInt(parsedArg[1]);
     public static void main(String[] args){
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket backend =
@@ -22,7 +22,8 @@ public class Storage {
         while (!Thread.currentThread().isInterrupted()) {
             if (System.currentTimeMillis() - startTime > 5000){
                 ZMsg msg = new ZMsg();
-                msg.add("NOTI")
+                msg.add("NOTIFY");
+                msg.add(start)
 
                 startTime = System.currentTimeMillis();
             }
