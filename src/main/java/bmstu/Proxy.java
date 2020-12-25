@@ -58,6 +58,7 @@ public class Proxy {
                         }
                     }
                     if (!found){
+                        message.addLast("not in storage");
                         
                     }
             }
