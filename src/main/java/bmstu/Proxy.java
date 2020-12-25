@@ -59,7 +59,7 @@ public class Proxy {
                     }
                     if (!found){
                         message.addLast("not in storage");
-                        
+                        message.send(client);
                     }
             }
             if (items.pollin(STORAGE)) {
