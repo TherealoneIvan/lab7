@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Storage {
     public static final String SPACE_REGEX = " ";
     public static final String GET_COMM = "GET";
+    public static final String PUT_COMM = "PUT";
     static Scanner input = new Scanner(System.in);
     static String arguments = input.nextLine();
     static String [] parsedArg = arguments.split(" ");
@@ -38,7 +39,9 @@ public class Storage {
                 String[] parsedMessage = messageFromProxy.toString().split(SPACE_REGEX);
                 if (parsedMessage[0].equals(GET_COMM)){
                     messageFromProxy.addLast(parsedArg.toString());
-                }else if ()
+                }else if (parsedMessage[0].equals(PUT_COMM)){
+                    
+                }
 
             }
         }
