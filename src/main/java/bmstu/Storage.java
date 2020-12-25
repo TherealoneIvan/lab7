@@ -14,11 +14,11 @@ public class Storage {
     static Integer end = Integer.parseInt(parsedArg[1]);
     public static void main(String[] args){
         ZMQ.Context context = ZMQ.context(1);
-        ZMQ.Socket backend =
+        ZMQ.Socket storageSocket =
                 context.socket(SocketType.DEALER);
-        backend.connect("tcp://localhost:5560");
+        storageSocket.connect("tcp://localhost:5560");
         ZMQ.Poller storage = context.poller (1);
-        storage.register(backend , ZMQ.Poller.POLLIN);
+        storage.register(storageSocket , ZMQ.Poller.POLLIN);
         long startTime = System.currentTimeMillis();
         while (!Thread.currentThread().isInterrupted()) {
             if (System.currentTimeMillis() - startTime > 5000){
@@ -27,11 +27,11 @@ public class Storage {
                 msg.addLast(String.valueOf(start));
                 msg.addLast(String.valueOf(end));
                 msg.addLast(parsedArg.toString());
-                msg.send(backend);
+                msg.send(storageSocket);
                 startTime = System.currentTimeMillis();
             }
             if (storage.pollin(0)){
-                ZMsg messageFromProxy = ZMsg.recvMsg(backend);
+                ZMsg messageFromProxy = ZMsg.recvMsg(storageSocket);
                 messageFromProxy.unwrap();
 
             }
