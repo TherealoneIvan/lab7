@@ -18,7 +18,7 @@ public class Client {
             String msg = input.nextLine();
             ZMsg req = new ZMsg();
             req.add(msg);
-            
+            req.send()
         }
     }
 }
