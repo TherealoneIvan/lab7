@@ -4,6 +4,7 @@ package bmstu;
 import org.zeromq.SocketType;
 import org.zeromq.ZFrame;
 import org.zeromq.ZMQ;
+import org.zeromq.ZMsg;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +33,7 @@ public class Proxy {
         items.register(frontend, ZMQ.Poller.POLLIN);
         items.register(backend, ZMQ.Poller.POLLIN);
         boolean more = false;
-        byte[] message;
+        ZMsg message;
 
         while (!Thread.currentThread().isInterrupted()) {
             items.poll();
