@@ -46,7 +46,7 @@ public class Proxy {
                         System.out.println(data.getValue().getStartSeq() + " == " + data.getValue().getEndSeq());
                         if (data.getValue().getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && data.getValue().getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])){
-                            message.wrap(data.getKey());
+                            message.wrap(data.getKey().duplicate());
                         }
                         message.send(backend);
                         if (parsedMsg[0].equals("GET")){
