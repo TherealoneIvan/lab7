@@ -62,6 +62,8 @@ public class Proxy {
                     int startSeq = Integer.parseInt(message.popString());
                     int endSeq = Integer.parseInt(message.popString());
                     storageData.put(adress , new StorageData(startSeq , endSeq , System.currentTimeMillis()));
+                }else {
+                    
                 }
             }
 
