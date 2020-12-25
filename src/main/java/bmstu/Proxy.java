@@ -15,7 +15,7 @@ public class Proxy {
     public static final int INPUT_DIGIT = 1;
     public static final int LIFE_CICLE = 10000;
 
-    public static HashMap<ZFrame , >
+    public static HashMap<ZFrame , StorageData> 
     public static void main(String[] args) {
         ArrayList<StorageData> storageData = new ArrayList<>();
 
