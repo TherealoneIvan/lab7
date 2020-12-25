@@ -20,7 +20,7 @@ public class Client {
             req.add(msg);
             req.send(requester);
             ZMsg answ = ZMsg.recvMsg(requester);
-            
+            System.out.println(answ);
         }
     }
 }
