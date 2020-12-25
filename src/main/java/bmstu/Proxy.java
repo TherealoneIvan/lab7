@@ -8,8 +8,9 @@ import java.util.ArrayList;
 
 public class Proxy {
 
-    public static final int COMMAND_ARGUMENT = 1;
+    public static final int COMMAND_ARGUMENT = 0;
     public static final String CLIENT_PUT_COMM = "PUT";
+    public static final int INPUT_DIGIT = 1;
 
     public static void main(String[] args) {
         ArrayList<StorageData> storageData = new ArrayList<>();
@@ -35,7 +36,7 @@ public class Proxy {
                 String[] parsedMsg = message.toString().split("");
                 if (parsedMsg[COMMAND_ARGUMENT].equals(CLIENT_PUT_COMM)){
                     for (StorageData data : storageData){
-                        if (data.getStartSeq() <= )
+                        if (data.getStartSeq() <= parsedMsg[INPUT_DIGIT] && )
                     }
                 }
 
