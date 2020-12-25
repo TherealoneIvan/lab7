@@ -6,6 +6,7 @@ import org.zeromq.ZMQ;
 
 public class Proxy {
     public static void main(String[] args) {
+        
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket frontend =
                 context.socket(SocketType.ROUTER);
