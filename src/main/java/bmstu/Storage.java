@@ -51,6 +51,8 @@ public class Storage {
                     Integer putKey = Integer.parseInt(parsedMessage[PUT_KEY_INDEX]);
                     String putValue = parsedMessage[PUT_VAL_INDEX];
                     arrayOfValues.set(putKey - start,putValue);
+                    for (int i = 0 ; i < arrayOfValues.size(); i++)
+                        System.out.println("arr " + arrayOfValues.get(i));
                 }
                 messageFromProxy.send(storageSocket);
             }
