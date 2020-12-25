@@ -35,7 +35,7 @@ public class Proxy {
         ZMQ.Poller items = context.poller(2);
         items.register(client, ZMQ.Poller.POLLIN);
         items.register(storage, ZMQ.Poller.POLLIN);
-        boolean more = false;
+        boolean found = false;
         ZMsg message;
 
         while (!Thread.currentThread().isInterrupted()) {
@@ -49,6 +49,7 @@ public class Proxy {
                         System.out.println(data.getValue().getStartSeq() + " == " + data.getValue().getEndSeq());
                         if (data.getValue().getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && data.getValue().getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])){
+                            found = true;
                             message.wrap(data.getKey().duplicate());
                         }
                         message.send(storage);
