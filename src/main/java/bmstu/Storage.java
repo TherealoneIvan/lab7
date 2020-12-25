@@ -14,6 +14,7 @@ public class Storage {
     public static final int PUT_KEY_INDEX = 1;
     public static final int PUT_VAL_INDEX = 2;
     public static final int FIRST_OBJECT = 2;
+    public static final int FIRST_ARG = 0;
     static Scanner input = new Scanner(System.in);
     static String arguments = input.nextLine();
     static String [] parsedArg = arguments.split(SPACE_REGEX);
@@ -45,7 +46,7 @@ public class Storage {
                 String[] parsedMessage = messageFromProxy.getLast().toString().split(SPACE_REGEX);
 
                 System.out.println(messageFromProxy.toString());
-                if (parsedMessage[0].equals(GET_COMM)){
+                if (parsedMessage[FIRST_ARG].equals(GET_COMM)){
                     messageFromProxy.addLast(arrayOfValues.toString());
                 }else if (parsedMessage[0].equals(PUT_COMM)){
                     Integer putKey = Integer.parseInt(parsedMessage[PUT_KEY_INDEX]);
