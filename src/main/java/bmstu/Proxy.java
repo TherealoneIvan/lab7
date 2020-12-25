@@ -48,6 +48,7 @@ public class Proxy {
                                 && data.getValue().getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && System.currentTimeMillis() - data.getValue().getTimeLife() > LIFE_CICLE){
                             message.wrap(data.getKey());
+                            System.out.println("data " + data.getKey());
                         }
                         message.send(backend);
                         if (parsedMsg[0].equals("GET")){
