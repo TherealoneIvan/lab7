@@ -15,6 +15,7 @@ public class Proxy {
 
     public static void main(String[] args) {
         ArrayList<StorageData> storageData = new ArrayList<>();
+        
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket frontend =
                 context.socket(SocketType.ROUTER);
