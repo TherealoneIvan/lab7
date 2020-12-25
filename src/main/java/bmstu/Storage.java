@@ -43,6 +43,7 @@ public class Storage {
                 messageFromProxy.unwrap();
                 String[] parsedMessage = messageFromProxy.toString().split(SPACE_REGEX);
                 System.out.println(parsedMessage);
+                System.out.println("12312");
                 if (parsedMessage[0].equals(GET_COMM)){
                     messageFromProxy.addLast(parsedArg.toString());
                     messageFromProxy.send(storageSocket);
