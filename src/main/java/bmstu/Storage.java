@@ -4,6 +4,7 @@ import org.zeromq.SocketType;
 import org.zeromq.ZMQ;
 import org.zeromq.ZMsg;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Storage {
@@ -15,6 +16,7 @@ public class Storage {
     static String [] parsedArg = arguments.split(SPACE_REGEX);
     static Integer start = Integer.parseInt(parsedArg[0]);
     static Integer end = Integer.parseInt(parsedArg[1]);
+    static ArrayList<String> arrayOfValues = itemsArrayBuilder(parsedArg);
     public static void main(String[] args){
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket storageSocket =
@@ -29,7 +31,7 @@ public class Storage {
                 msg.addLast("NOTIFY");
                 msg.addLast(String.valueOf(start));
                 msg.addLast(String.valueOf(end));
-                msg.addLast(parsedArg.toString());
+                msg.addLast(arrayOfValues.toString());
                 msg.send(storageSocket);
                 startTime = System.currentTimeMillis();
             }
@@ -41,9 +43,16 @@ public class Storage {
                     messageFromProxy.addLast(parsedArg.toString());
                     messageFromProxy.send(storageSocket);
                 }else if (parsedMessage[0].equals(PUT_COMM)){
-                    
+                    arrayOfValues.set()
                 }
             }
         }
+    }
+    public static ArrayList<String> itemsArrayBuilder(String[] arg){
+        ArrayList<String> tmpArr = new ArrayList<>();
+        for(String items : arg ){
+            tmpArr.add(items);
+        }
+        return tmpArr;
     }
 }
