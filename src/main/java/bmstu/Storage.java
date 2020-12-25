@@ -7,6 +7,7 @@ import org.zeromq.ZMsg;
 import java.util.Scanner;
 
 public class Storage {
+    public static final String SPACE_REGEX = " ";
     static Scanner input = new Scanner(System.in);
     static String arguments = input.nextLine();
     static String [] parsedArg = arguments.split(" ");
@@ -33,6 +34,7 @@ public class Storage {
             if (storage.pollin(0)){
                 ZMsg messageFromProxy = ZMsg.recvMsg(storageSocket);
                 messageFromProxy.unwrap();
+                String[] parsedMessage = messageFromProxy.toString().split(SPACE_REGEX);
                 
             }
         }
