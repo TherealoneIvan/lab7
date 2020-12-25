@@ -46,8 +46,7 @@ public class Proxy {
                     for (Map.Entry<ZFrame , StorageData> data : storageData.entrySet()){
                         System.out.println(data.getValue().getStartSeq() + " == " + data.getValue().getEndSeq());
                         if (data.getValue().getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
-                                && data.getValue().getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])
-                                && System.currentTimeMillis() - data.getValue().getTimeLife() > LIFE_CICLE){
+                                && data.getValue().getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])){
                             message.wrap(data.getKey());
                             System.out.println("data " + data.getKey());
                         }
