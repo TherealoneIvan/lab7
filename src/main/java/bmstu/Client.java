@@ -2,6 +2,7 @@ package bmstu;
 
 import org.zeromq.SocketType;
 import org.zeromq.ZMQ;
+import org.zeromq.ZMsg;
 
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class Client {
         Scanner input = new Scanner(System.in);
         while (true){
             String msg = input.nextLine();
-            
+            ZMsg req = 
         }
     }
 }
