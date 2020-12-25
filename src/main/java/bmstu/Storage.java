@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Storage {
     public static final String SPACE_REGEX = " ";
+    public static final String GET_COMM = "GET";
     static Scanner input = new Scanner(System.in);
     static String arguments = input.nextLine();
     static String [] parsedArg = arguments.split(" ");
@@ -35,7 +36,9 @@ public class Storage {
                 ZMsg messageFromProxy = ZMsg.recvMsg(storageSocket);
                 messageFromProxy.unwrap();
                 String[] parsedMessage = messageFromProxy.toString().split(SPACE_REGEX);
-                if (parsedMessage[0].equals())
+                if (parsedMessage[0].equals(GET_COMM)){
+                    
+                }
             }
         }
     }
