@@ -39,7 +39,6 @@ public class Proxy {
             items.poll();
             if (items.pollin(0)) {
                 message = ZMsg.recvMsg(frontend);
-                System.out.println("qwe");
                 String[] parsedMsg = message.getLast().toString().split(" ");
                 for (int i = 0 ; i < parsedMsg.length;i++)
                     System.out.println("parsedMsg " + parsedMsg[i]);
@@ -48,7 +47,6 @@ public class Proxy {
                         if (data.getValue().getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && data.getValue().getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])){
                             message.wrap(data.getKey());
-                            System.out.println("data " + data.getKey());
                         }
                         message.send(backend);
                         if (parsedMsg[0].equals("GET")){
