@@ -13,6 +13,7 @@ public class Storage {
     public static final String PUT_COMM = "PUT";
     public static final int PUT_KEY_INDEX = 1;
     public static final int PUT_VAL_INDEX = 2;
+    public static final int FIRST_OBJECT = 2;
     static Scanner input = new Scanner(System.in);
     static String arguments = input.nextLine();
     static String [] parsedArg = arguments.split(SPACE_REGEX);
@@ -56,8 +57,8 @@ public class Storage {
     }
     public static ArrayList<String> itemsArrayBuilder(String[] arg){
         ArrayList<String> tmpArr = new ArrayList<>();
-        for(String items : arg ){
-            tmpArr.add(items);
+        for(int i = FIRST_OBJECT; i < arg.length; i++ ){
+            tmpArr.add(arg[i]);
         }
         return tmpArr;
     }
