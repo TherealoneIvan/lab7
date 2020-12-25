@@ -61,7 +61,6 @@ public class Proxy {
                 ZFrame adress = message.unwrap();
                 if (message.getFirst().toString().contains("NOTIFY")){
                     message.pop();
-//                    System.out.println("got message");
                     int startSeq = Integer.parseInt(message.popString());
                     int endSeq = Integer.parseInt(message.popString());
                     storageData.put(adress , new StorageData(startSeq , endSeq , System.currentTimeMillis()));
