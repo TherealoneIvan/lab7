@@ -49,7 +49,9 @@ public class Proxy {
                             message.wrap(data.getKey());
                         }
                         message.send(backend);
-                        if ()
+                        if (parsedMsg[0].equals("GET")){
+                            
+                        }
                     }
                 }
 
