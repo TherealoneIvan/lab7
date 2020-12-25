@@ -58,7 +58,7 @@ public class Proxy {
                     message.pop();
                     int startSeq = Integer.parseInt(message.popString());
                     int endSeq = Integer.parseInt(message.popString());
-                    
+                    storageData.put()
                 }
             }
 
