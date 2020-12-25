@@ -39,6 +39,7 @@ public class Proxy {
             items.poll();
             if (items.pollin(0)) {
                 message = ZMsg.recvMsg(frontend);
+                System.out.println("qwe");
                 String[] parsedMsg = message.toString().split("");
                 if (parsedMsg[COMMAND_ARGUMENT].equals(CLIENT_PUT_COMM)){
                     System.out.println("qwe");
