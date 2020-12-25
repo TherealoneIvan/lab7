@@ -19,7 +19,7 @@ public class Client {
             ZMsg req = new ZMsg();
             req.add(msg);
             req.send(requester);
-            
+            ZMsg answ = 
         }
     }
 }
