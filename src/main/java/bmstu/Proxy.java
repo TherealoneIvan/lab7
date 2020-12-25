@@ -5,6 +5,7 @@ import org.zeromq.SocketType;
 import org.zeromq.ZMQ;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Proxy {
 
@@ -13,7 +14,7 @@ public class Proxy {
     public static final int INPUT_DIGIT = 1;
     public static final int LIFE_CICLE = 10000;
 
-    public static 
+    public static HashMap<>
     public static void main(String[] args) {
         ArrayList<StorageData> storageData = new ArrayList<>();
 
