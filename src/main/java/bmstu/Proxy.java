@@ -36,7 +36,8 @@ public class Proxy {
                 String[] parsedMsg = message.toString().split("");
                 if (parsedMsg[COMMAND_ARGUMENT].equals(CLIENT_PUT_COMM)){
                     for (StorageData data : storageData){
-                        if (data.getStartSeq() <= parsedMsg[INPUT_DIGIT] && )
+                        if (data.getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
+                                && data.getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT]))
                     }
                 }
 
