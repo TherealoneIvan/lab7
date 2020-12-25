@@ -18,7 +18,7 @@ public class Proxy {
     public static HashMap<ZFrame , StorageData> storageData;
     public static void main(String[] args) {
 //        ArrayList<StorageData> storageData = new ArrayList<>();
-
+        storageData = new HashMap<>();
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket frontend =
                 context.socket(SocketType.ROUTER);
@@ -52,7 +52,7 @@ public class Proxy {
             }
             if (items.pollin(1)) {
                 message = backend.recv(0);
-
+                
             }
 
         }
