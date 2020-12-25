@@ -43,10 +43,10 @@ public class Proxy {
                 String[] parsedMsg = message.toString().split("");
                 if (parsedMsg[COMMAND_ARGUMENT].equals(CLIENT_PUT_COMM)){
                     for (Map.Entry<ZFrame , StorageData> data : storageData.entrySet()){
-                        if (data.getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
-                                && data.getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])
-                                && System.currentTimeMillis() - data.getTimeLife() > LIFE_CICLE){
-
+                        if (data.getValue().getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
+                                && data.getValue().getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])
+                                && System.currentTimeMillis() - data.getValue().getTimeLife() > LIFE_CICLE){
+                            
                         }
                     }
                 }
