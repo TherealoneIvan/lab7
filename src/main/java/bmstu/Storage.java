@@ -27,7 +27,7 @@ public class Storage {
                 msg.addLast(String.valueOf(start));
                 msg.addLast(String.valueOf(end));
                 msg.addLast(parsedArg.toString());
-                msg.send()
+                msg.send(backend);
                 startTime = System.currentTimeMillis();
             }
             if (storage.pollin(0)){
