@@ -59,6 +59,7 @@ public class Proxy {
                     }
                     if (!found){
                         System.out.println("not in storage");
+                        ZMsg notInStorageMsg
                         message.addLast("not in storage");
                         message.send(client);
                     }
