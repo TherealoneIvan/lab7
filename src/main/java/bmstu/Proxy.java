@@ -39,8 +39,8 @@ public class Proxy {
 
         while (!Thread.currentThread().isInterrupted()) {
             items.poll();
-            boolean found = false;
             if (items.pollin(CLIENT)) {
+                boolean found = false;
                 message = ZMsg.recvMsg(client);
                 String[] parsedMsg = message.getLast().toString().split(SPACE_REGEX);
                 for (int i = 0 ; i < parsedMsg.length;i++)
@@ -56,6 +56,9 @@ public class Proxy {
                         if (parsedMsg[0].equals(GET)){
                             break;
                         }
+                    }
+                    if (!found){
+                        
                     }
             }
             if (items.pollin(STORAGE)) {
