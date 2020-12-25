@@ -52,7 +52,7 @@ public class Proxy {
             }
             if (items.pollin(1)) {
                 message = backend.recv(0);
-                ZFrame adress = 
+                ZFrame adress = message.
             }
 
         }
