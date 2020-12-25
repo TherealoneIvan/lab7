@@ -47,7 +47,7 @@ public class Storage {
                 }else if (parsedMessage[0].equals(PUT_COMM)){
                     Integer putKey = Integer.parseInt(parsedMessage[PUT_KEY_INDEX]);
                     String putValue = parsedMessage[PUT_VAL_INDEX];
-                    arrayOfValues.set()
+                    arrayOfValues.set(putKey - start,putValue);
                 }
             }
         }
