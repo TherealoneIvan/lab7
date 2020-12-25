@@ -41,7 +41,7 @@ public class Proxy {
                 message = ZMsg.recvMsg(frontend);
                 String[] parsedMsg = message.toString().split("");
                 if (parsedMsg[COMMAND_ARGUMENT].equals(CLIENT_PUT_COMM)){
-                    for (StorageData data : storageData){
+                    for (){
                         if (data.getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && data.getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && System.currentTimeMillis() - data.getTimeLife() > LIFE_CICLE){
