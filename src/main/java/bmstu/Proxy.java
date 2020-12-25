@@ -37,7 +37,8 @@ public class Proxy {
                 if (parsedMsg[COMMAND_ARGUMENT].equals(CLIENT_PUT_COMM)){
                     for (StorageData data : storageData){
                         if (data.getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
-                                && data.getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT]))
+                                && data.getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])
+                                && )
                     }
                 }
 
