@@ -16,6 +16,7 @@ public class Storage {
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket backend =
                 context.socket(SocketType.DEALER);
+        backend.connect("")
         ZMQ.Poller storage = context.poller (1);
         storage.register(backend , ZMQ.Poller.POLLIN);
         long startTime = System.currentTimeMillis();
