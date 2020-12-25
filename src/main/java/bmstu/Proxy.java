@@ -46,7 +46,7 @@ public class Proxy {
                         if (data.getValue().getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && data.getValue().getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && System.currentTimeMillis() - data.getValue().getTimeLife() > LIFE_CICLE){
-                            
+
                         }
                     }
                 }
