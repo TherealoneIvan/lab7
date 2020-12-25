@@ -15,7 +15,7 @@ public class Client {
         Scanner input = new Scanner(System.in);
         while (true){
             String msg = input.nextLine();
-
+            
         }
     }
 }
