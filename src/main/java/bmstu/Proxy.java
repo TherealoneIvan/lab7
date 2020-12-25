@@ -29,7 +29,9 @@ public class Proxy {
             if (items.pollin(0)) {
                 message = frontend.recv(0);
                 if (message.toString().contains("PUT")){
-                    for (StorageData data :)
+                    for (StorageData data : storageData){
+                        
+                    }
                 }
 
             }
