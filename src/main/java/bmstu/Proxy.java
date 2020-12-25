@@ -7,6 +7,9 @@ import org.zeromq.ZMQ;
 import java.util.ArrayList;
 
 public class Proxy {
+
+    public static final int COMMAND_ARGUMENT = 1;
+
     public static void main(String[] args) {
         ArrayList<StorageData> storageData = new ArrayList<>();
         ZMQ.Context context = ZMQ.context(1);
@@ -28,7 +31,8 @@ public class Proxy {
             items.poll();
             if (items.pollin(0)) {
                 message = frontend.recv(0);
-                if (message.toString().contains("PUT")){
+                String[] parsedMsg = message.toString().split("");
+                if (parsedMsg[COMMAND_ARGUMENT] = "PUT"){
                     for (StorageData data : storageData){
                         if (data.getStartSeq() <= )
                     }
