@@ -23,12 +23,11 @@ public class Storage {
         while (!Thread.currentThread().isInterrupted()) {
             if (System.currentTimeMillis() - startTime > 5000){
                 ZMsg msg = new ZMsg();
-                msg.add("NOTIFY");
-                msg.add(String.valueOf(start));
-                msg.add(" ");
-                msg.add(String.valueOf(end));
-                msg.add(parsedArg.toString());
-                backend.send(msg.toString());
+                msg.addLast("NOTIFY");
+                msg.addLast(String.valueOf(start));
+                msg.addLast(String.valueOf(end));
+                msg.addLast(parsedArg.toString());
+                msg.send()
                 startTime = System.currentTimeMillis();
             }
             if (storage.pollin(0)){
