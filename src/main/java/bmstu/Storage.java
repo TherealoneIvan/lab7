@@ -47,12 +47,12 @@ public class Storage {
                 System.out.println(messageFromProxy.toString());
                 if (parsedMessage[0].equals(GET_COMM)){
                     messageFromProxy.addLast(arrayOfValues.toString());
-                    messageFromProxy.send(storageSocket);
                 }else if (parsedMessage[0].equals(PUT_COMM)){
                     Integer putKey = Integer.parseInt(parsedMessage[PUT_KEY_INDEX]);
                     String putValue = parsedMessage[PUT_VAL_INDEX];
                     arrayOfValues.set(putKey - start,putValue);
                 }
+                messageFromProxy.send(storageSocket);
             }
         }
     }
