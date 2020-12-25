@@ -39,6 +39,7 @@ public class Storage {
                 String[] parsedMessage = messageFromProxy.toString().split(SPACE_REGEX);
                 if (parsedMessage[0].equals(GET_COMM)){
                     messageFromProxy.addLast(parsedArg.toString());
+                    messageFromProxy.send(storageSocket);
                 }else if (parsedMessage[0].equals(PUT_COMM)){
                     
                 }
