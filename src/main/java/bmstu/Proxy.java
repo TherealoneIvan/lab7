@@ -44,9 +44,7 @@ public class Proxy {
                 message = ZMsg.recvMsg(client);
                 String[] parsedMsg = message.getLast().toString().split(SPACE_REGEX);
                 for (int i = 0 ; i < parsedMsg.length;i++)
-                    System.out.println("parsedMsg " + parsedMsg[i]);
                     for (Map.Entry<ZFrame , StorageData> data : storageData.entrySet()){
-                        System.out.println(data.getValue().getStartSeq() + " == " + data.getValue().getEndSeq());
                         if (data.getValue().getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && data.getValue().getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])){
                             found = true;
@@ -58,8 +56,7 @@ public class Proxy {
                         }
                     }
                     if (!found){
-                        System.out.println("not in storage");
-                        ZMsg notInStorageMsg
+                        message.pollLast();
                         message.addLast("not in storage");
                         message.send(client);
                     }
