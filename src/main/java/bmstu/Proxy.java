@@ -26,7 +26,9 @@ public class Proxy {
             items.poll();
             if (items.pollin(0)) {
                 message = frontend.recv(0);
-                if (message.toString().contains())
+                if (message.toString().contains("PUT")){
+                    
+                }
 
             }
             if (items.pollin(1)) {
