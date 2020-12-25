@@ -48,6 +48,7 @@ public class Proxy {
                                 && System.currentTimeMillis() - data.getValue().getTimeLife() > LIFE_CICLE){
                             message.wrap(data.getKey());
                         }
+                        message.send(backend);
                         
                     }
                 }
