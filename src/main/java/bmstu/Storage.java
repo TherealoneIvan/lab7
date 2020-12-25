@@ -35,7 +35,7 @@ public class Storage {
                 ZMsg messageFromProxy = ZMsg.recvMsg(storageSocket);
                 messageFromProxy.unwrap();
                 String[] parsedMessage = messageFromProxy.toString().split(SPACE_REGEX);
-                if (parsedMessage)
+                if (parsedMessage[0].equals())
             }
         }
     }
