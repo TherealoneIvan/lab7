@@ -50,7 +50,7 @@ public class Proxy {
                         }
                         message.send(backend);
                         if (parsedMsg[0].equals("GET")){
-                            
+                            break;
                         }
                     }
                 }
