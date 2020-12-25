@@ -43,7 +43,7 @@ public class Storage {
                     messageFromProxy.addLast(parsedArg.toString());
                     messageFromProxy.send(storageSocket);
                 }else if (parsedMessage[0].equals(PUT_COMM)){
-                    
+                    Integer putKey = Integer.parseInt(parsedMessage[1])
                     arrayOfValues.set()
                 }
             }
