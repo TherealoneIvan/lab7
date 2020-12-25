@@ -11,6 +11,8 @@ public class Storage {
     public static final String SPACE_REGEX = " ";
     public static final String GET_COMM = "GET";
     public static final String PUT_COMM = "PUT";
+    public static final int PUT_KEY_INDEX = 1;
+    public static final int PUT_VAL_INDEX = 2;
     static Scanner input = new Scanner(System.in);
     static String arguments = input.nextLine();
     static String [] parsedArg = arguments.split(SPACE_REGEX);
@@ -43,7 +45,8 @@ public class Storage {
                     messageFromProxy.addLast(parsedArg.toString());
                     messageFromProxy.send(storageSocket);
                 }else if (parsedMessage[0].equals(PUT_COMM)){
-                    Integer putKey = Integer.parseInt(parsedMessage[1])
+                    Integer putKey = Integer.parseInt(parsedMessage[PUT_KEY_INDEX]);
+                    String putValue = parsedMessage[PUT_VAL_INDEX];
                     arrayOfValues.set()
                 }
             }
