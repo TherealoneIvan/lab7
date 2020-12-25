@@ -29,7 +29,7 @@ public class Storage {
         long startTime = System.currentTimeMillis();
         while (!Thread.currentThread().isInterrupted()) {
 //            System.out.println(start + "===" + end);
-            System.out.println(arrayOfValues);
+            System.out.println(arrayOfValues.toString());
             if (System.currentTimeMillis() - startTime > 5000){
                 ZMsg msg = new ZMsg();
                 msg.addLast("NOTIFY");
