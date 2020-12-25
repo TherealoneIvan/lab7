@@ -35,11 +35,11 @@ public class Proxy {
         ZMQ.Poller items = context.poller(2);
         items.register(client, ZMQ.Poller.POLLIN);
         items.register(storage, ZMQ.Poller.POLLIN);
-        boolean found = false;
         ZMsg message;
 
         while (!Thread.currentThread().isInterrupted()) {
             items.poll();
+            boolean found = false;
             if (items.pollin(CLIENT)) {
                 message = ZMsg.recvMsg(client);
                 String[] parsedMsg = message.getLast().toString().split(SPACE_REGEX);
