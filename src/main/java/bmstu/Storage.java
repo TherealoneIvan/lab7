@@ -37,8 +37,9 @@ public class Storage {
                 messageFromProxy.unwrap();
                 String[] parsedMessage = messageFromProxy.toString().split(SPACE_REGEX);
                 if (parsedMessage[0].equals(GET_COMM)){
-                    
+                    messageFromProxy.addLast(parsedArg.toString());
                 }
+                
             }
         }
     }
