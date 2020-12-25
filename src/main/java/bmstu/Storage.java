@@ -40,7 +40,7 @@ public class Storage {
                 if (parsedMessage[0].equals(GET_COMM)){
                     messageFromProxy.addLast(parsedArg.toString());
                 }else if (parsedMessage[0].equals(PUT_COMM)){
-                    
+
                 }
 
             }
