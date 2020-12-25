@@ -48,7 +48,7 @@ public class Proxy {
             }
             if (items.pollin(1)) {
                 message = backend.recv(0);
-                
+
             }
 
         }
