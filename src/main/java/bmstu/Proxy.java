@@ -54,7 +54,9 @@ public class Proxy {
             if (items.pollin(1)) {
                 message = ZMsg.recvMsg(backend);
                 ZFrame adress = message.unwrap();
-                if (message.contains())
+                if (message.toString().contains("NOTIFY")){
+                    
+                }
             }
 
         }
