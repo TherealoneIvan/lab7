@@ -40,7 +40,7 @@ public class Proxy {
                         if (data.getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && data.getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && System.currentTimeMillis() - data.getTimeLife() > LIFE_CICLE){
-                            
+
                         }
                     }
                 }
@@ -48,7 +48,7 @@ public class Proxy {
             }
             if (items.pollin(1)) {
                 message = backend.recv(0);
-
+                
             }
 
         }
