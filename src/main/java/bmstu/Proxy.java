@@ -38,7 +38,7 @@ public class Proxy {
         while (!Thread.currentThread().isInterrupted()) {
             items.poll();
             if (items.pollin(0)) {
-                message = frontend.recv(0);
+                message = ZMsg.recvMsg(frontend);
                 String[] parsedMsg = message.toString().split("");
                 if (parsedMsg[COMMAND_ARGUMENT].equals(CLIENT_PUT_COMM)){
                     for (StorageData data : storageData){
@@ -52,8 +52,9 @@ public class Proxy {
 
             }
             if (items.pollin(1)) {
-                message = backend.recv(0);
-                ZFrame adress = message.
+                message = ZMsg.recvMsg(backend);
+                ZFrame adress = message.unwrap();
+                
             }
 
         }
