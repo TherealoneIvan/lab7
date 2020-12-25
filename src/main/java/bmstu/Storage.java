@@ -12,7 +12,7 @@ public class Storage {
     public static final String PUT_COMM = "PUT";
     static Scanner input = new Scanner(System.in);
     static String arguments = input.nextLine();
-    static String [] parsedArg = arguments.split(" ");
+    static String [] parsedArg = arguments.split(SPACE_REGEX);
     static Integer start = Integer.parseInt(parsedArg[0]);
     static Integer end = Integer.parseInt(parsedArg[1]);
     public static void main(String[] args){
@@ -42,7 +42,6 @@ public class Storage {
                 }else if (parsedMessage[0].equals(PUT_COMM)){
 
                 }
-
             }
         }
     }
