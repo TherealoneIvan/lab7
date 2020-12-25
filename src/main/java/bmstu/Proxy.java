@@ -4,9 +4,11 @@ package bmstu;
 import org.zeromq.SocketType;
 import org.zeromq.ZMQ;
 
+import java.util.ArrayList;
+
 public class Proxy {
     public static void main(String[] args) {
-
+        ArrayList<StorageData> storageData 
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket frontend =
                 context.socket(SocketType.ROUTER);
@@ -27,7 +29,7 @@ public class Proxy {
             if (items.pollin(0)) {
                 message = frontend.recv(0);
                 if (message.toString().contains("PUT")){
-                    
+
                 }
 
             }
