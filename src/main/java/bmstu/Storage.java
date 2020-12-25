@@ -29,6 +29,7 @@ public class Storage {
         storage.register(storageSocket , ZMQ.Poller.POLLIN);
         long startTime = System.currentTimeMillis();
         while (!Thread.currentThread().isInterrupted()) {
+            storage.poll(1);
             if (System.currentTimeMillis() - startTime > 5000){
                 ZMsg msg = new ZMsg();
                 msg.addLast("NOTIFY");
@@ -42,8 +43,8 @@ public class Storage {
                 ZMsg messageFromProxy = ZMsg.recvMsg(storageSocket);
                 messageFromProxy.unwrap();
                 String[] parsedMessage = messageFromProxy.toString().split(SPACE_REGEX);
-                System.out.println(parsedMessage);
-                System.out.println("12312");
+                
+                System.out.println(parsedMessage[0]);
                 if (parsedMessage[0].equals(GET_COMM)){
                     messageFromProxy.addLast(parsedArg.toString());
                     messageFromProxy.send(storageSocket);
