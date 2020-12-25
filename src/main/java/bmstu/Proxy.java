@@ -41,6 +41,7 @@ public class Proxy {
                 message = ZMsg.recvMsg(frontend);
                 String[] parsedMsg = message.toString().split("");
                 if (parsedMsg[COMMAND_ARGUMENT].equals(CLIENT_PUT_COMM)){
+                    System.out.println("qwe");
                     for (Map.Entry<ZFrame , StorageData> data : storageData.entrySet()){
                         if (data.getValue().getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && data.getValue().getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])
