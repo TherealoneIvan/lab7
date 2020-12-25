@@ -6,7 +6,7 @@ import org.zeromq.ZMQ;
 
 public class Proxy {
     public static void main(String[] args) {
-        
+
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket frontend =
                 context.socket(SocketType.ROUTER);
@@ -26,7 +26,7 @@ public class Proxy {
             items.poll();
             if (items.pollin(0)) {
                 message = frontend.recv(0);
-                if ()
+                if (message.toString().contains())
 
             }
             if (items.pollin(1)) {
