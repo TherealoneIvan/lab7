@@ -58,6 +58,7 @@ public class Proxy {
                         }
                     }
                     if (!found){
+                        System.out.println("not in storage");
                         message.addLast("not in storage");
                         message.send(client);
                     }
