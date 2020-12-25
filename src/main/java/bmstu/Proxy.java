@@ -44,6 +44,7 @@ public class Proxy {
                 for (int i = 0 ; i < parsedMsg.length;i++)
                     System.out.println("parsedMsg " + parsedMsg[i]);
                     for (Map.Entry<ZFrame , StorageData> data : storageData.entrySet()){
+                        System.out.println(data.getValue().getStartSeq() + " == " + data.getValue().getEndSeq());
                         if (data.getValue().getStartSeq() <= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && data.getValue().getEndSeq() >= Integer.parseInt(parsedMsg[INPUT_DIGIT])
                                 && System.currentTimeMillis() - data.getValue().getTimeLife() > LIFE_CICLE){
@@ -65,6 +66,7 @@ public class Proxy {
                     int startSeq = Integer.parseInt(message.popString());
                     int endSeq = Integer.parseInt(message.popString());
                     storageData.put(adress , new StorageData(startSeq , endSeq , System.currentTimeMillis()));
+
                 }else {
                     System.out.println(message.getLast().toString());
                     message.send(frontend);
