@@ -15,6 +15,8 @@ public class Storage {
     public static final int PUT_VAL_INDEX = 2;
     public static final int FIRST_OBJECT = 2;
     public static final int FIRST_ARG = 0;
+    public static final int NOTIFY_TIME = 5000;
+    public static final String TCP_LOCALHOST_5560 = "tcp://localhost:5560";
     static Scanner input = new Scanner(System.in);
     static String arguments = input.nextLine();
     static String [] parsedArg = arguments.split(SPACE_REGEX);
@@ -25,13 +27,13 @@ public class Storage {
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket storageSocket =
                 context.socket(SocketType.DEALER);
-        storageSocket.connect("tcp://localhost:5560");
+        storageSocket.connect(TCP_LOCALHOST_5560);
         ZMQ.Poller storage = context.poller (1);
         storage.register(storageSocket , ZMQ.Poller.POLLIN);
         long startTime = System.currentTimeMillis();
         while (!Thread.currentThread().isInterrupted()) {
             storage.poll(1);
-            if (System.currentTimeMillis() - startTime > 5000){
+            if (System.currentTimeMillis() - startTime > NOTIFY_TIME){
                 ZMsg msg = new ZMsg();
                 msg.addLast("NOTIFY");
                 msg.addLast(String.valueOf(start));
@@ -48,12 +50,10 @@ public class Storage {
                 System.out.println(messageFromProxy.toString());
                 if (parsedMessage[FIRST_ARG].equals(GET_COMM)){
                     messageFromProxy.addLast(arrayOfValues.toString());
-                }else if (parsedMessage[0].equals(PUT_COMM)){
+                }else if (parsedMessage[FIRST_ARG].equals(PUT_COMM)){
                     Integer putKey = Integer.parseInt(parsedMessage[PUT_KEY_INDEX]);
                     String putValue = parsedMessage[PUT_VAL_INDEX];
                     arrayOfValues.set(putKey - start,putValue);
-                    for (int i = 0 ; i < arrayOfValues.size(); i++)
-                        System.out.println("arr " + arrayOfValues.get(i));
                 }
                 messageFromProxy.send(storageSocket);
             }
