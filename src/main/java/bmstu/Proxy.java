@@ -53,6 +53,7 @@ public class Proxy {
                             break;
                         }
                     }
+                    System.out.println("wwwww");
             }
             if (items.pollin(1)) {
                 message = ZMsg.recvMsg(backend);
