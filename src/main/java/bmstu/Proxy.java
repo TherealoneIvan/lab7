@@ -63,7 +63,8 @@ public class Proxy {
                     int endSeq = Integer.parseInt(message.popString());
                     storageData.put(adress , new StorageData(startSeq , endSeq , System.currentTimeMillis()));
                 }else {
-                    
+                    System.out.println(message.getLast().toString());
+                    message.send(frontend);
                 }
             }
 
