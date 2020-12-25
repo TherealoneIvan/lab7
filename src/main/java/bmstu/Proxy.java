@@ -30,7 +30,7 @@ public class Proxy {
                 message = frontend.recv(0);
                 if (message.toString().contains("PUT")){
                     for (StorageData data : storageData){
-                        
+                        if (data.getStartSeq() > )
                     }
                 }
 
